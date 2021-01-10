@@ -1,0 +1,82 @@
+.carta {
+    border-radius: 10px;
+    background: rgba( 255, 255, 255, 0.30 );
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.247);
+    backdrop-filter: blur( 8.5px );
+    -webkit-backdrop-filter: blur( 8.5px );
+    border-radius: 10px;
+
+    
+    .card-header {
+        background-color: transparent;
+        border: none;
+        
+        
+        a {
+            color: #393e46;
+            text-decoration: none;
+        }
+
+        .dropleft {
+
+            .dropdown-menu {
+                border-radius: 10px;
+                background: rgb(255, 255, 255);
+                box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.103);
+                backdrop-filter: blur( 8.5px );
+                -webkit-backdrop-filter: blur( 8.5px );
+                //border: none;
+                border-radius: 5px;
+            
+                
+                .dropdown-item {
+                    font-family: 'Open Sans', sans-serif;
+                    cursor: pointer;
+                }
+
+                .dropdown-item:active {
+                    background-color: #f8f9fa;
+                }
+            }
+        }
+
+        .dropleft button {
+            border: none;
+            background-color: transparent;
+            outline: none;
+            color: #393e46;
+        }
+    }
+
+    .card-body {
+
+        h3 {
+            color: #393e46;
+            font-family: 'Fredoka One', cursive;
+        }
+
+        span {
+            font-family: 'Open Sans', sans-serif;
+            color: #393e46d3;
+        }
+
+        p {
+            font-family: 'Open Sans', sans-serif;
+            color: #393e46;
+
+            a {
+                color: #393e46;
+            }
+
+            a:hover {
+                text-decoration: none;
+            }
+        }
+
+        .row {
+            font-family: 'Open Sans', sans-serif;
+            color: #393e46d3;
+        }
+    }
+}
+

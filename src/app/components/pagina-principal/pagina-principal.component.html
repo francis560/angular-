@@ -1,0 +1,44 @@
+<app-nav-v3></app-nav-v3>
+
+<div class="p-5 row row-cols-12">
+
+    <div class="carta mx-3 mb-4 col-sm-12 col-md-4 col-lg-4 your-element" data-tilt>
+        <div class="card-header p-3">
+            
+            <div class="dropleft">
+                <button type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <i class="fas fa-ellipsis-v"></i>
+                </button>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item"><i class="fas fa-sign-out-alt mr-2"></i>Salir del grupo</a>
+
+                    <ng-container *ngIf="permisos">
+                        <a class="dropdown-item"><i class="fas fa-cog mr-2"></i>Editar grupo</a>
+                        <a class="dropdown-item"><i class="fas fa-eraser mr-2"></i>Eliminar grupo</a>
+                    </ng-container>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="card-body">
+            <h3 class="card-title">Santa Ana 5to grado</h3>
+            <p><a data-toggle="collapse" href="#multiCollapseExample1" role="button" aria-expanded="false" aria-controls="multiCollapseExample1">Materias <i class="fas fa-caret-down"></i></a></p>
+
+            <div class="row mb-2">
+                <div class="col">
+                    <div class="collapse" id="multiCollapseExample1">
+                      <div class="">Naturales, Sociales, Formacion Humana, Matematica, Ingles.</div>
+                    </div>
+                </div>
+            </div>
+
+            <span class="card-text"><i class="fas fa-users"></i> : 20</span>
+        </div>
+    </div>
+
+
+</div>
+
+<!-- <p>dale al boton para ver toda la pagina</p>
+<button class="btn btn-primary" routerLink="/home">Este boton es temporal</button> -->

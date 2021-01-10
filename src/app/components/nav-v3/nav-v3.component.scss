@@ -1,0 +1,51 @@
+nav {
+    background-color: #fff;
+    border-bottom: 2px solid rgb(2, 120, 174, .490);
+    justify-content: space-between;
+
+    a {
+        color: #e8654a;
+        font-family: 'Fredoka One', cursive;
+
+        span {
+            color: #0278ae;
+        }
+    }
+
+    div {
+
+        a {
+            font-family: 'Open Sans', sans-serif;
+        }
+
+        button {
+            background-color: transparent;
+            border: none;
+            outline: none;
+
+            i {
+                color: #e8654a;
+            }
+        }
+
+        .dropdown-menu {
+            border-radius: 10px;
+            background: rgba(255, 255, 255, 0.87);
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.103);
+            backdrop-filter: blur( 8.5px );
+            -webkit-backdrop-filter: blur( 8.5px );
+            border: none;
+            border-radius: 5px;
+
+            .dropdown-item {
+                font-family: 'Open Sans', sans-serif;
+                cursor: pointer;
+                color: #393e46;
+            }  
+            
+            .dropdown-item:active {
+                background-color: transparent;
+            }
+        }
+    }
+}        

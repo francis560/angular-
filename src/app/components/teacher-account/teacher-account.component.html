@@ -1,0 +1,55 @@
+<app-nav-v2></app-nav-v2>
+
+<div class="contenedor animated fadeIn">
+
+    <div class="login">
+        <div class="p-4">
+            <div>
+                <div>
+                    <h4 class="titulo my-4">Crea una cuenta de maestro para poder publicar las calificaciones de tus estudiantes.</h4>
+                </div>
+                <div>
+                    <form [formGroup]="teacherForm">
+                        <div class="input-caja mb-4">
+                            <input type="text" formControlName="name" name="username" autocomplete="off" class="" placeholder="Nombre">
+                        </div>
+                        <div style="color: #ff0000; font-family: 'Open Sans', sans-serif; margin-top: -18px; font-size: 14px;" *ngIf="teacherForm.get('name')?.errors && teacherForm.get('name')?.touched">
+
+                            <p *ngIf="teacherForm.get('name')?.hasError('required')">El nombre es un campo requerido.</p>
+                            <p *ngIf="teacherForm.get('name')?.hasError('minlength')">El nombre no puede tener menos de 4 caracteres.</p>
+                            <p *ngIf="teacherForm.get('name')?.hasError('maxlength')">El nombre no puede tener mas de 15 caracteres.</p>
+
+                        </div>
+
+                        <div class="input-caja mb-4">
+                            <input type="email" formControlName="email" autocomplete="off" name="email" class="" placeholder="Correo electrónico">
+                        </div>
+                        <div style="color: #ff0000; font-family: 'Open Sans', sans-serif; margin-top: -18px; font-size: 14px;" *ngIf="teacherForm.get('email')?.errors && teacherForm.get('email')?.touched">
+
+                            <p *ngIf="teacherForm.get('email')?.hasError('required')">El email es un campo requerido.</p>
+                            <p *ngIf="teacherForm.get('email')?.hasError('email')">Este no es un email valido.</p>
+
+                        </div>
+
+                        <div class="input-caja mb-5">
+                            <input type="password" formControlName="password" autocomplete="off" name="password" class="" placeholder="Contraseña">
+                        </div>
+                        <div style="color: #ff0000; font-family: 'Open Sans', sans-serif; margin-top: -45px; font-size: 14px;" *ngIf="teacherForm.get('password')?.errors && teacherForm.get('password')?.touched">
+
+                            <p *ngIf="teacherForm.get('password')?.hasError('required')">La contraseña es un campo requerido.</p>
+                            <p *ngIf="teacherForm.get('password')?.hasError('minlength')">La contraseña no puede tener menos de 6 caracteres.</p>
+                            <p *ngIf="teacherForm.get('password')?.hasError('maxlength')">La contraseña no puede tener mas de 20 caracteres.</p>
+
+                        </div>
+
+                        <button type="submit" [disabled]="teacherForm.invalid" class="btn p-3 btn-block hvr-grow-shadow"><i class="hvr-icon fas fa-edit mr-2"></i>Registrarse</button>
+                        <div class="mt-3">
+                            <a routerLink="/home/signin" style="font-size: 15px; color: #0278ae; font-family: 'Fredoka One', cursive;">¿Ya tienes una cuenta de <span style="color: #e8654a;">Express Notes</span>? Iniciar sesión</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
