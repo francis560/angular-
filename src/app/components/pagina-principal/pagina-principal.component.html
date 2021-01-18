@@ -1,8 +1,21 @@
-<app-nav-v3></app-nav-v3>
+<app-nav-v3 [permisos]="permisos"></app-nav-v3>
 
-<div class="p-5 row row-cols-12">
+<ng-container *ngIf="groupVerify">
+    <div class="without-groups">
+        <div>
+            <i class="far fa-clipboard mb-3"></i>
+            <div>
+                <p>Todavía no estás en ningún grupo</p>
+                <p>Únase a un grupo para ver sus notas</p>
+            </div>
+        </div>
+    </div>
+</ng-container>
 
-    <div class="carta mx-3 mb-4 col-sm-12 col-md-4 col-lg-4 your-element" data-tilt>
+
+<div *ngIf="!groupVerify" class="p-5 row row-cols-12">
+
+    <div *ngFor="let item of prueba" class="carta mx-3 mb-4 col-sm-12 col-md-4 col-lg-4 your-element">
         <div class="card-header p-3">
             
             <div class="dropleft">
@@ -10,11 +23,11 @@
                     <i class="fas fa-ellipsis-v"></i>
                 </button>
                 <div class="dropdown-menu">
-                    <a class="dropdown-item"><i class="fas fa-sign-out-alt mr-2"></i>Salir del grupo</a>
+                    <a (click)="exitGroup(item)" class="dropdown-item"><i class="fas fa-sign-out-alt mr-2"></i>Salir del grupo</a>
 
                     <ng-container *ngIf="permisos">
-                        <a class="dropdown-item"><i class="fas fa-cog mr-2"></i>Editar grupo</a>
-                        <a class="dropdown-item"><i class="fas fa-eraser mr-2"></i>Eliminar grupo</a>
+                        <a (click)="editGroup(item)" class="dropdown-item"><i class="fas fa-cog mr-2"></i>Editar grupo</a>
+                        <a (click)="deleteGroup(item)" class="dropdown-item"><i class="fas fa-eraser mr-2"></i>Eliminar grupo</a>
                     </ng-container>
                 </div>
             </div>
@@ -23,12 +36,13 @@
 
         <div class="card-body">
             <h3 class="card-title">Santa Ana 5to grado</h3>
-            <p><a data-toggle="collapse" href="#multiCollapseExample1" role="button" aria-expanded="false" aria-controls="multiCollapseExample1">Materias <i class="fas fa-caret-down"></i></a></p>
+            <p><a data-toggle="collapse" href="#materias{{ item.id }}" role="button" aria-expanded="false" [attr.aria-controls]="'materias' + item.id">Materias <i class="fas fa-caret-down"></i></a></p>
+
 
             <div class="row mb-2">
                 <div class="col">
-                    <div class="collapse" id="multiCollapseExample1">
-                      <div class="">Naturales, Sociales, Formacion Humana, Matematica, Ingles.</div>
+                    <div class="collapse" id="materias{{ item.id }}">
+                      <div>Naturales, Sociales, Formacion Humana, Matematica, Ingles.</div>
                     </div>
                 </div>
             </div>
@@ -37,8 +51,4 @@
         </div>
     </div>
 
-
 </div>
-
-<!-- <p>dale al boton para ver toda la pagina</p>
-<button class="btn btn-primary" routerLink="/home">Este boton es temporal</button> -->

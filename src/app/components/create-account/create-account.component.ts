@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-create-account',
@@ -8,17 +9,25 @@ import { Router } from '@angular/router';
 })
 export class CreateAccountComponent implements OnInit {
 
-  constructor(private router: Router) { }
+  title: string = 'Crear cuenta';
+
+  constructor(private router: Router, private titleService: Title) { }
 
   ngOnInit(): void {
+    this.setTitle(this.title);
+  }
+
+
+  public setTitle(newTitle: string) {
+    this.titleService.setTitle(newTitle);
   }
 
   teacherAccount () {
-    this.router.navigate(['/home/create/teacherAccount']);
+    this.router.navigate(['/teacherAccount']);
   }
 
   studentAccount () {
-    this.router.navigate(['/home/create/studentAccount']);
+    this.router.navigate(['/studentAccount']);
   }
 
 }

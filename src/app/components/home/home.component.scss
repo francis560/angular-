@@ -5,7 +5,7 @@
 
         .contenedor {
             display: flex;
-            justify-content: space-between;
+            justify-content: space-around;
 
             .textos {
                 margin: auto 0;
@@ -96,7 +96,7 @@
 
 .seccion-2 {
     overflow-x: hidden;
-    margin-top: 20vh;
+    margin-top: 10vh;
 
     .row {
 

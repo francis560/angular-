@@ -1,0 +1,239 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&display=swap');
+
+.contenedor {
+    padding: 48px 100px;
+
+    .d-flex {
+        width: 100%;
+        
+        .header {
+            width: 100%;
+            border-radius: 10px;
+            background: #e8654a;
+            box-shadow: 0 3px 18px 0 rgba(31, 38, 135, 0.347);
+
+            .d-flex {
+                justify-content: space-between;
+
+                .titulo {
+                    font-family: 'Fredoka One', cursive;
+                    color: #fff;
+                    font-size: 50px;
+                }
+                
+                .dropleft {
+
+                    button {
+                        border: none;
+                        background-color: transparent;
+                        outline: none;
+                        color: #fff;
+                    }
+
+                    .dropdown-menu {
+                        border-radius: 10px;
+                        background: rgb(255, 255, 255);
+                        box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.103);
+                        backdrop-filter: blur( 8.5px );
+                        -webkit-backdrop-filter: blur( 8.5px );
+                        //border: none;
+                        border-radius: 5px;
+             
+                        
+                        .dropdown-item {
+                            font-family: 'Open Sans', sans-serif;
+                            cursor: pointer;
+                        }
+        
+                        .dropdown-item:active {
+                            background-color: #f8f9fa;
+                        }
+                    }
+                }
+
+                .materias {
+
+                    span {
+                        color: #fff;
+                    }
+
+                    p {
+                        font-family: 'Open Sans', sans-serif;
+                        color: rgba(255, 255, 255, 0.884);
+                    }
+                }
+            }
+
+            .group-code {
+
+                button {
+                    padding: 0;
+                    border: none;
+                    outline: none;
+                    background-color: transparent;
+                    font-family: 'Open Sans', sans-serif;
+                    color: rgb(255, 255, 255);
+                }
+            }
+        }
+
+        .group-nav {
+            width: 100%;
+            border: 2px solid rgb(2, 120, 174, .490);
+            border-radius: 8px;
+            box-shadow: 0 2px 12px 0 rgba(31, 38, 135, 0.347);
+
+            div {
+
+                button {
+                    background-color: transparent;
+                    border: none;
+                    outline: none;
+                    padding: 18px 28px;
+                    font-family: 'Fredoka One', cursive;
+                    color: rgba(57, 62, 70, 0.514)
+                }
+
+                button:hover {
+                    background-color: rgba(57, 62, 70, .080);
+                    color: rgba(57, 62, 70, 0.714);
+                }
+                
+                .active {
+                    color: #0277ae;
+                }
+
+                .active:hover {
+                    background-color: rgba(2, 119, 174, 0.090);
+                    color: #0277ae;
+                }
+            }
+        }
+
+        @media (max-width: 688px) {
+            .header {
+                padding: 24px 38px !important;
+
+                .d-flex {
+
+                    .titulo {
+                        font-size: 33px;
+                    }
+
+                    .materias {
+                        font-size: 14px;
+                    }
+                }
+
+                .group-code {
+                    font-size: 14px;
+                }
+            }
+        }
+
+        @media (max-width: 460px) {
+            .header {
+                padding: 24px 28px !important;
+
+                .d-flex {
+
+                    .titulo {
+                        font-size: 28px;
+                    }
+
+                    .materias {
+                        font-size: 14px;
+                    }
+                }
+
+                .group-code {
+                    font-size: 14px;
+                }
+            }
+        }
+
+        .colorUno {
+            background: #0278ae !important;
+        }
+        
+        .colorDos {
+            background-color: #e8654a !important;
+        }
+
+        .degradadoUno {
+            background: #264653;
+            background: -webkit-linear-gradient(to right, #264653 ,#1d607b);
+            background: linear-gradient(to right, #264653 ,#1d607b);
+        }
+
+        .degradadoDos {
+            background: #2a9d8f;
+            background: -webkit-linear-gradient(to right, #2a9d8f ,#05d6bd);
+            background: linear-gradient(to right, #2a9d8f ,#05d6bd);
+        }
+
+        .degradadoTres {
+            background: #011627;
+            background: -webkit-linear-gradient(to right, #011627 ,#034072);
+            background: linear-gradient(to right, #011627 ,#034072);
+        }
+
+        .degradadoCuatro {
+            background: #e71d36;
+            background: -webkit-linear-gradient(to right, #e71d36 ,#f86073);
+            background: linear-gradient(to right, #e71d36 ,#f86073);
+        }
+
+        .degradadoCinco {
+            background: #ff9f1c;
+            background: -webkit-linear-gradient(to right, #ff9f1c ,#fbc071);
+            background: linear-gradient(to right, #ff9f1c ,#fbc071);
+        }
+
+        .degradadoSeis {
+            background: #b5b5b5;
+            background: -webkit-linear-gradient(to right, #b5b5b5 ,#dcdcdc);
+            background: linear-gradient(to right, #b5b5b5 ,#dcdcdc);
+
+            button {
+                color: #343a40!important;
+            }
+
+            .titulo {
+                color: #343a40!important;
+            }
+
+            .materias {
+
+                p, span {
+                    color: #343a40!important;
+                }
+            }
+        }
+
+        .degradadoSiete {
+            background: #5151c6;
+            background: -webkit-linear-gradient(to right, #5151c6 ,#888bf4);
+            background: linear-gradient(to right, #5151c6 ,#888bf4);
+        }
+    }
+
+}
+
+@media (max-width: 880px) {
+    .contenedor {
+        padding: 48px 40px;
+    }
+}
+
+@media (max-width: 540px) {
+    .contenedor {
+        padding: 48px 25px;
+    }
+}
+
+@media (max-width: 400px) {
+    .contenedor {
+        padding: 48px 15px;
+    }
+}

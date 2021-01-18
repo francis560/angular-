@@ -1,0 +1,92 @@
+<app-nav-v4></app-nav-v4>
+
+
+<div class="contenedor d-flex justify-content-center align-items-center flex-column">
+
+    <div class="d-flex flex-column">
+
+        <div class="header px-5 py-4" [ngClass]="headerBgColor">
+
+            <div class="d-flex flex-column mb-4">
+                <div class="d-flex">
+                    <p class="titulo">Santa Ana 5to</p>
+                    <div>
+                        <div class="dropleft">
+                            <button type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i class="fas fa-ellipsis-v"></i>
+                            </button>
+                            <div class="dropdown-menu">
+                                <a routerLink="/" class="dropdown-item"><i class="fas fa-sign-out-alt mr-2"></i>Salir del grupo</a>
+                                <a class="dropdown-item" data-toggle="modal" data-target="#bgColorGroup"><i class="fas fa-highlighter mr-2"></i>Editar colores del grupo</a>
+            
+                                <ng-container *ngIf="permisos">
+                                    <a class="dropdown-item" (click)="createNote = !createNote"><i class="fas fa-folder-plus mr-2"></i>Crear notas</a>
+                                </ng-container>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="materias">
+                    <p><span>Materias:</span> Naturales, Sociales, Formacion Humana, Matematica, Ingles.</p>
+                </div>
+            </div>
+
+            <div class="group-code mb-2">
+                <button id="code">{{ groupCode }}<i class="ml-2 far fa-copy"></i></button>
+            </div>
+
+        </div>
+        
+
+        <div class="group-nav mt-5 d-flex flex-row align-items-center justify-content-center">
+            <div>
+                <button [ngClass]="classActiveMembers" (click)="viewMembers()"><i class="fas fa-users mr-2"></i>Miembros</button>
+                <button [ngClass]="classActiveNotes" (click)="viewNotes()"><i class="far fa-sticky-note mr-2"></i>Notas</button>
+            </div>
+        </div>
+
+        <app-view-notes class="fadeIn animated" [dataprueba]="groupCode" *ngIf="viewShowNotes"></app-view-notes>
+        
+    </div>
+    
+    <div class="d-flex justify-content-center align-items-center">
+        <app-group-members [dataprueba]="groupCode" style="width: 100%;" *ngIf="viewShowMembers"></app-group-members>
+    </div>
+    
+    <div class="modal fade" id="bgColorGroup" tabindex="-1" aria-labelledby="bgColorGroup" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-body my-4 ">
+            <div class="text-center">
+                <h2 style="font-size: 30px; color: #595959; font-family: 'Fredoka One', cursive;">Editar colores del grupo</h2>
+            </div>
+            <div class="mt-5">
+                <div class="d-flex justify-content-center align-items-center flex-column">
+                    <div>
+                        <p style="font-size: 18px; font-family: 'Open Sans', sans-serif;">Seleccione el color del grupo</p>
+                    </div>
+                    <div class="flex-row mx-4 d-flex justify-content-center align-items-center flex-wrap">
+                        <button (click)="groupBgColor(item.color)" *ngFor="let item of groupColor;" style="border: none; width: 35px; height: 35px; border-radius: 5px;" [ngClass]="item.btn"></button>
+                    </div>
+                    <div class="flex-row mx-4 mt-4">
+                        <div class="text-center">
+                            <p style="font-size: 18px; font-family: 'Open Sans', sans-serif;">Degradados</p>
+                        </div>
+                        <div class="flex-row flex-wrap d-flex justify-content-center align-items-center">
+                            <button (click)="groupBgColor(item.color)" *ngFor="let item of groupColorGradient;" style="border: none; width: 35px; height: 35px; border-radius: 5px;" [ngClass]="item.btn"></button>
+                        </div>
+                    </div>
+                    <div class="mt-5">
+                        <p style="font-size: 14px; font-family: 'Open Sans', sans-serif;">Recarga la página para aplicar los cambios</p>
+                    </div>
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <ng-container *ngIf="createNote">
+        <app-create-note [groupCode]="groupCode" class="fadeIn animated" style="position: fixed; top: 0; width: 100%; height: 80vh; z-index: 1000; background-color: #fff;"></app-create-note>
+    </ng-container>
+</div>

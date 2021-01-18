@@ -9,15 +9,15 @@
                     <h4 class="titulo my-4">Crea una cuenta de estudiante para acceder a tus notas.</h4>
                 </div>
                 <div>
-                    <form [formGroup]="studentForm">
+                    <form [formGroup]="studentForm" (ngSubmit)="saveStudentAccount(studentForm.value)">
                         <div class="input-caja mb-4">
-                            <input type="text" formControlName="name" name="username" autocomplete="off" class="" placeholder="Nombre">
+                            <input type="text" formControlName="username" name="username" autocomplete="off" class="" placeholder="Nombre">
                         </div>
-                        <div style="color: #ff0000; font-family: 'Open Sans', sans-serif; margin-top: -18px; font-size: 14px;" *ngIf="studentForm.get('name')?.errors && studentForm.get('name')?.touched">
+                        <div style="color: #ff0000; font-family: 'Open Sans', sans-serif; margin-top: -18px; font-size: 14px;" *ngIf="studentForm.get('username')?.errors && studentForm.get('username')?.touched">
 
-                            <p *ngIf="studentForm.get('name')?.hasError('required')">El nombre es un campo requerido.</p>
-                            <p *ngIf="studentForm.get('name')?.hasError('minlength')">El nombre no puede tener menos de 4 caracteres.</p>
-                            <p *ngIf="studentForm.get('name')?.hasError('maxlength')">El nombre no puede tener mas de 15 caracteres.</p>
+                            <p *ngIf="studentForm.get('username')?.hasError('required')">El nombre es un campo requerido.</p>
+                            <p *ngIf="studentForm.get('username')?.hasError('minlength')">El nombre no puede tener menos de 4 caracteres.</p>
+                            <p *ngIf="studentForm.get('username')?.hasError('maxlength')">El nombre no puede tener mas de 15 caracteres.</p>
 
                         </div>
 
@@ -44,7 +44,7 @@
 
                         <button type="submit" [disabled]="studentForm.invalid" class="btn p-3 btn-block hvr-grow-shadow"><i class="hvr-icon fas fa-edit mr-2"></i>Registrarse</button>
                         <div class="mt-3">
-                            <a routerLink="/home/signin" style="font-size: 15px; color: #0278ae; font-family: 'Fredoka One', cursive;">¿Ya tienes una cuenta de <span style="color: #e8654a;">Express Notes</span>? Iniciar sesión</a>
+                            <a routerLink="/signin" style="font-size: 15px; color: #0278ae; font-family: 'Fredoka One', cursive;">¿Ya tienes una cuenta de <span style="color: #e8654a;">Express Notes</span>? Iniciar sesión</a>
                         </div>
                     </form>
                 </div>

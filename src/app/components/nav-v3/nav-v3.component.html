@@ -9,12 +9,12 @@
                 <div class="dropdown-menu" style="position: absolute;">
                     <a (click)="groupJoin()" class="dropdown-item"><i class="fas fa-door-open mr-2"></i>Unirme a un grupo</a>
                     
-                    <ng-container *ngIf="valor">
-                        <a (click)="groupCreate()" class="dropdown-item"><i class="fas fa-plus-square mr-2"></i>Crear un grupo</a>
+                    <ng-container *ngIf="permisos">
+                        <a (click)="groupCreate()" class="dropdown-item"><i class="fas fa-plus mr-2"></i>Crear un grupo</a>
                     </ng-container>
 
-                    <a class="dropdown-item"><i class="fas fa-cog mr-2"></i>Editar cuenta</a>
-                    <a class="dropdown-item"><i class="fas fa-door-open mr-2"></i>Cerrar sesión</a>
+                    <a (click)="editAccount()" class="dropdown-item"><i class="fas fa-user-edit mr-2"></i>Editar cuenta</a>
+                    <a class="dropdown-item" (click)="cerrarSesion()"><i class="fas fa-sign-out-alt mr-2"></i>Cerrar sesión</a>
                 </div>
             </div>
         </div>

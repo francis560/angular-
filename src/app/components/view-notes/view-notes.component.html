@@ -1,0 +1,36 @@
+<ng-container *ngIf="viewNoteVerify">
+    <div class="without-groups">
+        <div>
+            <i class="far fa-sticky-note mb-3"></i>
+            <div>
+                <p>Este grupo no tiene notas publicadas</p>
+                <p>Espera a que el profesor publique algunas notas</p>
+            </div>
+        </div>
+    </div>
+</ng-container>
+
+<div class="contenedor-tabla py-5 container" *ngIf="!viewNoteVerify">
+
+  <table class="table table-bordered">
+  
+      <thead>
+        <tr>
+          <th scope="col">Asignaturas</th>
+          <th *ngFor="let l of tablaDataPrueba[0].meses;" scope="col">{{ l }}</th>
+        </tr>
+      </thead>
+    
+      <tbody>
+        <tr *ngFor="let item of tablaDataPrueba;">
+    
+          <th scope="row">{{ item.materias }}</th>
+    
+          <td *ngFor="let j of item.nota;">{{ j }}</td>
+    
+        </tr>
+      </tbody>
+    
+  </table>
+
+</div>

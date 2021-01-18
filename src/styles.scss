@@ -18,7 +18,6 @@
 }
 
 
-
 // clases de sweetalert
 
 .swal2-actions {
@@ -34,7 +33,7 @@
     font-weight: 100 !important;
 }
 
-.swal2-confirm, .swal2-cancel {
+.swal2-confirm, .swal2-cancel, .swal2-deny {
     font-family: 'Fredoka One', cursive !important;
     font-weight: 200 !important;
     outline: none !important;
@@ -48,12 +47,12 @@
     background-color: #0278ae !important;
 }
 
-.swal2-cancel {
+.swal2-cancel, .swal2-deny {
     background-color: rgb(232, 101, 74, .300) !important;
     color: #e8654a !important;
 }
 
-.swal2-cancel:hover, .swal2-cancel:active {
+.swal2-cancel:hover, .swal2-cancel:active, .swal2-deny:hover, .swal2-deny:active {
     background-color: rgb(232, 100, 74) !important;
     color: #fff !important;
 }
@@ -69,7 +68,7 @@
     -webkit-box-shadow: none !important;
 }
 
-.swal2-content {
+.swal2-content, .swal2-footer {
     font-family: 'Open Sans', sans-serif;
 }
 

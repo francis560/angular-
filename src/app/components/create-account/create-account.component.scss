@@ -115,14 +115,38 @@ section {
             .select {
                 text-align: center;
                 padding: 5px;
+                
+                p {
+                    font-size: 28px;
+                }
             }
 
             .opcion-1, .opcion-2 {
                 width: 90%;
+                
 
                 .teacher-icon, .student-icon {
-                    margin: auto 24px auto 0;
+                    margin: auto 24px auto 0 !important;
+                    width: 80px;
+                    height: 80px;
                     min-width: 80px !important;
+                }
+
+                .data-account {
+
+                    .titulo {
+    
+                        p {
+                            font-size: 14px;
+                        }
+                    }
+    
+                    .descripcion {
+    
+                        p {
+                            font-size: 14px;
+                        }
+                    }
                 }
             }
         }
